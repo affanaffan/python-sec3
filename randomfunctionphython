@@ -1,0 +1,163 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "name": "Untitled0.ipynb",
+      "provenance": [],
+      "collapsed_sections": [],
+      "authorship_tag": "ABX9TyOnDd54cslwR3AEBoWRnIfe",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/affanaffan/python-sec3/blob/main/randomfunctionphython\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "NhUIKnpNJilY",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "outputId": "3e15a68b-d070-4ed8-a77f-0134ee3e43cc"
+      },
+      "source": [
+        "\n",
+        "#mylist = random.sample(range(1, 100), 20)\n",
+        "\n",
+        "num =[a for a in range(1,100)]\n",
+        "result = random.choices(num,k=20)\n",
+        "#mylist.append(result)\n",
+        "\n",
+        "print(result)\n",
+        "print(\"averag is:\",sum(result)/20)"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "text": [
+            "[62, 88, 14, 73, 31, 16, 50, 98, 2, 74, 67, 5, 1, 59, 60, 19, 26, 93, 50, 48]\n",
+            "averag is: 46.8\n"
+          ],
+          "name": "stdout"
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "17UmmeoflaOj",
+        "outputId": "1a58cb06-c868-452d-ecce-0d08373c2173"
+      },
+      "source": [
+        "\n",
+        "from datetime import datetime\n",
+        "import random\n",
+        "\n",
+        "\n",
+        "random.seed(datetime.now())\n",
+        "mylist = [random.randint(1, 100)for i in range(20)]\n",
+        "#mylist.sort()\n",
+        "\n",
+        "print(mylist)\n",
+        "print(\"The average is:\", sum(num)/20)\n",
+        "print(\"largest number is:\", mylist[0])\n",
+        "print(\"smallest number is:\", mylist[-1])\n"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "text": [
+            "[95, 93, 38, 98, 81, 34, 55, 3, 73, 85, 36, 73, 97, 92, 35, 38, 10, 13, 55, 16]\n",
+            "The average is: 51.2\n",
+            "largest number is: 95\n",
+            "smallest number is: 16\n"
+          ],
+          "name": "stdout"
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "Gghffjwx_Wsb",
+        "outputId": "20e7f059-62c3-4e62-bc59-9bedb7e11614"
+      },
+      "source": [
+        "\n",
+        "from datetime import datetime\n",
+        "import random\n",
+        "\n",
+        "\n",
+        "random.seed(datetime.now())\n",
+        "mylist = [random.randint(1, 100)for i in range(20)]\n",
+        "\n",
+        "\n",
+        "if mylist[0] < mylist[-1]:\n",
+        "  smallestvalue = mylist[0]\n",
+        "  secondsmallestvalue = mylist[-1]\n",
+        "else:\n",
+        "  smallestvalue = mylist[-1]\n",
+        "  secondsmallestvalue = mylist[0] \n",
+        "if mylist[0] > mylist[1]:\n",
+        "  largestValue = mylist[0]\n",
+        "  secondlargestValue = mylist[1]    \n",
+        "else:\n",
+        "  largestValue = mylist[1]\n",
+        "  secondlargestValue = mylist[0]\n",
+        "\n",
+        "for num in mylist:\n",
+        "  if num > largestValue:\n",
+        "    secondlargestValue = largestValue\n",
+        "    largestValue = num\n",
+        "  if num < smallestvalue:\n",
+        "    sceondsmallestvalue = smallestvalue\n",
+        "    smallestvalue = num\n",
+        "print(mylist)\n",
+        "print(\"largest Value: \", largestValue)\n",
+        "print(\"smallest value:\",smallestvalue)\n",
+        "print(\"Second largest Value: \", secondlargestValue)\n",
+        "print(\"Second smallest value:\",secondsmallestvalue)\n",
+        "\n"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "text": [
+            "[44, 35, 61, 56, 71, 32, 61, 68, 82, 41, 87, 42, 23, 26, 49, 25, 71, 25, 32, 22]\n",
+            "largest Value:  87\n",
+            "smallest value: 22\n",
+            "Second largest Value:  82\n",
+            "Second smallest value: 44\n"
+          ],
+          "name": "stdout"
+        }
+      ]
+    }
+  ]
+}
